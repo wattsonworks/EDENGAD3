@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#eccccd" />
+<!-- Private invitation — keep out of search engines -->
+<meta name="robots" content="noindex, nofollow" />
+<title>קיבלתם הזמנה לחתונה של עדן וגד</title>
+<meta name="description" content="קיבלתם הזמנה לחתונה של עדן וגד · 26.07.2026 — גרדו את העיגול וגלו את ההזמנה" />
+
+<!-- Open Graph (link preview in WhatsApp) -->
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="he_IL" />
+<meta property="og:url" content="https://wattsonworks.github.io/EDENGAD/" />
+<meta property="og:title" content="קיבלתם הזמנה לחתונה של עדן וגד" />
+<meta property="og:description" content="26.07.2026 · גרדו את העיגול וגלו את ההזמנה 💌" />
+<meta property="og:image" content="https://wattsonworks.github.io/EDENGAD/assets/img/og.jpg" />
+<meta property="og:image:width" content="820" />
+<meta property="og:image:height" content="1229" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="קיבלתם הזמנה לחתונה של עדן וגד" />
+<meta name="twitter:image" content="https://wattsonworks.github.io/EDENGAD/assets/img/og.jpg" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%92%8C%3C/text%3E%3C/svg%3E" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Pinyon+Script&family=Frank+Ruhl+Libre:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<!-- preloader: shown until the gate + surprises have loaded -->
+<div id="preloader" class="preloader" role="status" aria-live="polite">
+  <div class="pre-card">
+    <svg class="pre-ring" viewBox="0 0 100 100" aria-hidden="true">
+      <circle class="pre-track" cx="50" cy="50" r="40"></circle>
+      <circle class="pre-arc" cx="50" cy="50" r="40"></circle>
+    </svg>
+    <span class="pre-mono">ע<span class="amp">&amp;</span>ג</span>
+  </div>
+  <span class="pre-label" data-i18n="loading">רגע אחד…</span>
+  <div class="pre-bar"><span class="pre-bar-fill" id="preBarFill"></span></div>
+  <span class="pre-pct" id="prePct" aria-hidden="true">0%</span>
+</div>
+
+<div class="page-bg" aria-hidden="true"></div>
+<audio id="bgm" src="assets/audio/music.mp3?v=3" loop preload="auto" playsinline></audio>
+
+<!-- SVG filters: deckled handmade-paper edge -->
+<svg width="0" height="0" aria-hidden="true" style="position:absolute">
+  <filter id="deckle">
+    <feTurbulence type="fractalNoise" baseFrequency="0.014 0.02" numOctaves="3" seed="9" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="7" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+
+<!-- ============================================================= -->
+<!--  ACT −1 — THE GATE (split doors that open to the sides)       -->
+<!-- ============================================================= -->
+<div id="gate" class="gate" role="button" tabindex="0" aria-label="לחצו כאן לכניסה">
+  <div class="gate-half gate-left"  aria-hidden="true"><span class="gate-art"></span></div>
+  <div class="gate-half gate-right" aria-hidden="true"><span class="gate-art"></span></div>
+  <div class="gate-seam" aria-hidden="true"></div>
+  <!-- pulsing tap ring at the centre so it reads as tappable -->
+  <span class="gate-pulse" aria-hidden="true"></span>
+  <div class="gate-hint">
+    <span class="gate-hint-pill" data-i18n="enterHint">לחצו כאן לכניסה</span>
+    <span class="gate-chevs" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+    </span>
+  </div>
+</div>
+
+
+<!-- ============================================================= -->
+<!--  ACT −0.5 — THE SCRATCH (gate reveals this; scratching it      -->
+<!--             reveals the envelope behind)                       -->
+<!-- ============================================================= -->
+<div id="scratch-scene" class="scratch-scene">
+  <div class="scratch-guide" id="scratchGuide">
+    <p class="scratch-instruct" data-i18n="scratchInstruct">גרדו את העיגול</p>
+    <svg class="scratch-arrow" viewBox="0 0 24 30" aria-hidden="true"><path d="M12 2v22M5 16l7 7 7-7"/></svg>
+  </div>
+  <div class="reveal-wrap">
+    <figure class="reveal-circle" id="revealCircle">
+      <img class="reveal-img" src="assets/img/reveal.jpg"
+           alt="עדן וגד מחבקים על שפת הים" draggable="false" />
+      <div class="sparkle-layer" id="sparkleLayer" aria-hidden="true"></div>
+      <canvas class="scratch" id="scratch" aria-hidden="true"></canvas>
+    </figure>
+    <p class="scratch-hint" id="scratchHint">
+      <span class="scratch-finger" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M9 11V5.5a1.5 1.5 0 0 1 3 0V11m0-1.5a1.5 1.5 0 0 1 3 0V11m0-1a1.5 1.5 0 0 1 3 0v4.6a5.4 5.4 0 0 1-5.4 5.4H11a4 4 0 0 1-3.3-1.8L4.8 17a1.6 1.6 0 0 1 2.5-2l1 1V8.5a1.5 1.5 0 0 1 3 0V11"/></svg>
+      </span>
+      <span data-i18n="scratchHint">Scratch to reveal</span>
+    </p>
+  </div>
+</div>
+
+
+<!-- ============================================================= -->
+<!--  ACT 0 — ENVELOPE / LOADER                                    -->
+<!-- ============================================================= -->
+<div id="envelope-scene" class="envelope-scene" role="button" tabindex="0"
+     aria-label="Tap to open your invitation">
+  <div class="ambient" aria-hidden="true"></div>
+  <div class="petals" id="petals" aria-hidden="true"></div>
+
+  <div class="envelope-stage">
+    <div class="envelope" id="envelope3d">
+      <div class="env-glow" aria-hidden="true"></div>
+
+      <!-- real linen envelope body (pocket) -->
+      <img class="env-body" src="assets/img/envbody.webp" alt="" aria-hidden="true" />
+
+      <!-- the lid / flap that folds up on open -->
+      <div class="env-lid-pivot" aria-hidden="true">
+        <img class="env-lid" src="assets/img/envlid.webp" alt="" />
+      </div>
+
+      <!-- wax seal + break burst -->
+      <div class="env-seal" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-7.5-9.4C4.5 8.4 6.6 6.5 9 6.5c1.5 0 2.6.8 3 1.6.4-.8 1.5-1.6 3-1.6 2.4 0 4.5 1.9 4.5 5.1C19.5 16.4 12 21 12 21z"/></svg>
+      </div>
+      <div class="seal-burst" id="sealBurst" aria-hidden="true"></div>
+
+      <div class="env-shadow" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <div class="open-hint">
+    <span class="hint-text" data-i18n="tapOpen">הקליקו לפתיחה</span>
+    <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+</div>
+
+
+<!-- doves released from the opening envelope (top-level so they keep flying
+     as the envelope lifts away and the note is revealed) -->
+<div class="dove-burst" id="doveBurst" aria-hidden="true"></div>
+
+
+<!-- ============================================================= -->
+<!--  TOP BAR — language + sound                                   -->
+<!-- ============================================================= -->
+<header class="topbar" aria-hidden="false">
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button type="button" class="lang-btn" data-lang="en">EN</button>
+    <span class="lang-sep">/</span>
+    <button type="button" class="lang-btn is-active" data-lang="he">עב</button>
+  </div>
+  <button type="button" id="soundBtn" class="sound-btn" aria-label="Toggle sound" aria-pressed="false">
+    <svg class="ic-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8 8 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <svg class="ic-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16 9l5 5M21 9l-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+  </button>
+</header>
+
+<!-- persistent, tappable "scroll for more" cue, shown across the invitation once it's open -->
+<div class="scroll-down" id="scrollDown" aria-hidden="true">
+  <span class="scroll-down-label" data-i18n="scrollMore">גללו להמשך</span>
+  <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5"/></svg>
+</div>
+
+
+<!-- ============================================================= -->
+<!--  ACT 1 — THE CARD                                             -->
+<!-- ============================================================= -->
+<main id="main" class="stage">
+  <section class="card-scene">
+    <!-- the invitation card: transparent blank paper + text written over it -->
+    <figure class="note-paper reveal-on-scroll" id="card">
+      <img class="note-card" src="assets/img/cardblank.webp" alt="" />
+      <div class="note-text">
+        <span class="nt-bsd">בס״ד</span>
+        <h1 class="nt-names">
+          <span class="nt-he">עדן <span class="amp">&amp;</span> גד</span>
+          <span class="nt-en" hidden>Eden <span class="amp">&amp;</span> Gad</span>
+        </h1>
+        <span class="nt-rule" aria-hidden="true"></span>
+        <p class="nt-line" data-i18n="overline">נרגשים להזמינכם לחגוג עימנו</p>
+        <p class="nt-line" data-i18n="invite2">את היום המאושר בחיינו,</p>
+        <p class="nt-line" data-i18n="invite3">שיתקיים בעזרת ה׳ ביום ראשון, י״ב אב, התשפ״ו</p>
+        <p class="nt-date">26.07.2026</p>
+        <span class="nt-rule" aria-hidden="true"></span>
+        <p class="nt-line" data-i18n="ntSched">קבלת פנים 19:30 · חופה וקידושין 20:30</p>
+        <p class="nt-line nt-venue" data-i18n="ntVenue1">אולמי אלכסנדר</p>
+        <p class="nt-line nt-venue" data-i18n="ntVenue2">המסיק 2, עמק חפר</p>
+      </div>
+    </figure>
+
+    <!-- live countdown beneath the note -->
+    <div class="countdown" id="countdown" aria-live="polite">
+      <div class="cd-item"><span class="cd-num" data-cd="days">0</span><span class="cd-lbl" data-i18n="cdDays">days</span></div>
+      <span class="cd-sep">·</span>
+      <div class="cd-item"><span class="cd-num" data-cd="hours">0</span><span class="cd-lbl" data-i18n="cdHours">hours</span></div>
+      <span class="cd-sep">·</span>
+      <div class="cd-item"><span class="cd-num" data-cd="mins">0</span><span class="cd-lbl" data-i18n="cdMins">mins</span></div>
+      <span class="cd-sep">·</span>
+      <div class="cd-item"><span class="cd-num" data-cd="secs">0</span><span class="cd-lbl" data-i18n="cdSecs">secs</span></div>
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================== -->
+  <!--  THE QUOTE — S.Y. Agnon, above the temple                   -->
+  <!-- =========================================================== -->
+  <section class="quote-sec" id="quote">
+    <div class="temple-quote reveal-on-scroll">
+      <blockquote class="quote-text" data-i18n="quote">"וְדוֹמֶה הָיָה לִי שֶׁהָאָרֶץ שֶׁהָלַכְתִּי עָלֶיהָ וְהָרְחוֹבוֹת שֶׁעָבַרְתִּי בָּהֶם וְכָל הָעוֹלָם כֻּלּוֹ, אֵינָם אֶלָּא פְּרוֹזְדוֹר לְבַיִת זֶה."</blockquote>
+      <figcaption class="quote-author" data-i18n="quoteAuthor">ש״י עגנון</figcaption>
+    </div>
+  </section>
+
+
+  <!-- =========================================================== -->
+  <!--  THE TEMPLE (emerges below the quote)                       -->
+  <!-- =========================================================== -->
+  <section class="temple-feature" id="temple" aria-label="בית המקדש">
+    <figure class="temple-wrap">
+      <img class="temple-art" src="assets/img/temple.webp" alt="איור של בית המקדש" loading="lazy" />
+    </figure>
+  </section>
+
+
+  <!-- =========================================================== -->
+  <!--  OUR STORY — g7                                             -->
+  <!-- =========================================================== -->
+  <section class="story" id="story">
+    <figure class="story-photo reveal-on-scroll">
+      <img src="assets/img/g7.jpg" alt="עדן וגד על שפת הים בשעת הזהב" loading="lazy" />
+    </figure>
+  </section>
+
+
+  <!-- =========================================================== -->
+  <!--  ACT 3 — DETAILS                                            -->
+  <!-- =========================================================== -->
+  <section class="details" id="details">
+    <div class="details-inner reveal-on-scroll">
+      <div class="details-card">
+        <div class="details-content">
+          <h2 class="details-title" data-i18n="detailsTitle">Save our date</h2>
+
+          <dl class="detail-rows">
+            <div class="detail-row">
+              <dt data-i18n="whenLabel">מתי</dt>
+              <dd>
+                <span class="dd-strong" data-i18n="whenValue">יום ראשון · 26 ביולי 2026</span>
+                <span class="dd-sub" data-i18n="whenSub">י״ב באב התשפ״ו</span>
+              </dd>
+            </div>
+            <div class="detail-row">
+              <dt data-i18n="schedLabel">לוח זמנים</dt>
+              <dd>
+                <span class="dd-strong" data-i18n="schedValue">קבלת פנים 19:30</span>
+                <span class="dd-sub" data-i18n="schedSub">חופה וקידושין 20:30</span>
+              </dd>
+            </div>
+            <div class="detail-row">
+              <dt data-i18n="whereLabel">איפה</dt>
+              <dd>
+                <span class="dd-strong" data-i18n="whereValue">אולמי אלכסנדר</span>
+                <span class="dd-sub" data-i18n="whereSub">המסיק 2, עמק חפר</span>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="details-actions">
+        <a class="btn btn-primary" id="calBtn" href="#" download="Eden-and-Gad.ics" data-i18n="addCal">Add to calendar</a>
+        <a class="btn btn-ghost" id="rsvpBtn" href="#" target="_blank" rel="noopener" data-i18n="rsvp">RSVP on WhatsApp</a>
+      </div>
+
+      <!-- parents — bride's on the right, groom's on the left (RTL) -->
+      <div class="parents">
+        <div class="parent-col">
+          <span class="parent-label" data-i18n="brideParentsLabel">הורי הכלה</span>
+          <span class="parent-names" data-i18n="brideParents">ד״ר אבי ישועה זצ״ל ושרית</span>
+        </div>
+        <span class="parent-div" aria-hidden="true"></span>
+        <div class="parent-col">
+          <span class="parent-label" data-i18n="groomParentsLabel">הורי החתן</span>
+          <span class="parent-names" data-i18n="groomParents">אבי וסיגלית צומעי</span>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <span class="f-mono">E <span class="amp">&amp;</span> G</span>
+      <p class="f-line" data-i18n="footer">Made with love · 26.07.2026</p>
+      <a class="maker-credit" id="makerLink" href="https://wa.me/972506787586" target="_blank" rel="noopener">
+        <span class="maker-q" data-i18n="makerQ">רוצים הזמנה כזאת?</span>
+        <span class="maker-phone" dir="ltr">050-678-7586</span>
+      </a>
+    </footer>
+  </section>
+</main>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>
