@@ -416,6 +416,16 @@ html[dir="ltr"] .nt-line{ font-family:var(--serif); font-style:italic; font-size
   letter-spacing:.04em; margin:0.8cqw 0 0; }
 .nt-venue{ font-size:3.4cqw; color:#7d6c49; }
 html[dir="ltr"] .nt-venue{ font-size:3.2cqw; }
+/* parents on the note card — bride's right, groom's left (RTL), slim divider */
+.nt-parents{ display:flex; width:100%; justify-content:center; align-items:stretch;
+  margin-top:2.6cqw; }
+.nt-par-col{ flex:1 1 0; min-width:0; display:flex; flex-direction:column; gap:0.5cqw;
+  padding:0 2.2cqw; text-align:center; }
+.nt-par-label{ font-family:var(--hebrew); font-size:2.7cqw; color:#9a886a; letter-spacing:.03em; }
+.nt-par-names{ font-family:var(--hebrew); font-size:3cqw; color:#7d6c49; line-height:1.3; }
+.nt-par-div{ width:1px; align-self:stretch; background:rgba(154,136,106,.5); margin:0.4cqw 0; }
+html[dir="ltr"] .nt-par-label{ font-family:var(--serif); }
+html[dir="ltr"] .nt-par-names{ font-family:var(--serif); font-style:italic; }
 
 /* keepsake (scratch + countdown) beneath the note */
 .keepsake{ display:flex; flex-direction:column; align-items:center; gap:18px; }
@@ -645,22 +655,22 @@ html[dir="rtl"] .quote-author{ letter-spacing:.04em; font-family:var(--hebrew); 
   aspect-ratio:1024 / 1536;
   background:url("../img/scroll.webp") center / contain no-repeat;
   filter:drop-shadow(0 22px 30px rgba(120,90,55,.22)); }
-.details-content{ position:absolute; inset:8% 11.5% 11.5%;
+.details-content{ position:absolute; inset:12% 15% 13%;
   display:flex; flex-direction:column; align-items:center; justify-content:center;
-  text-align:center; gap:clamp(8px,2vh,13px); }
+  text-align:center; gap:clamp(12px,2.6vh,20px); }
 .details-title{ font-family:var(--serif); font-style:italic; font-weight:500;
-  font-size:clamp(18px,5vw,23px); color:var(--ink); margin:0; }
+  font-size:clamp(20px,5.4vw,26px); color:var(--ink); margin:0; }
 
-.detail-rows{ margin:0; display:flex; flex-direction:column; gap:clamp(7px,1.7vh,12px); width:100%; }
+.detail-rows{ margin:0; display:flex; flex-direction:column; gap:clamp(10px,2.2vh,16px); width:100%; }
 .detail-row{ display:flex; flex-direction:column; align-items:center; gap:2px;
-  text-align:center; padding-bottom:clamp(6px,1.4vh,10px);
+  text-align:center; padding-bottom:clamp(8px,1.8vh,13px);
   border-bottom:1px solid rgba(150,120,70,.22); }
 .detail-row:last-child{ border-bottom:none; padding-bottom:0; }
-.detail-row dt{ font-size:10px; letter-spacing:.24em; text-transform:uppercase;
+.detail-row dt{ font-size:10.5px; letter-spacing:.24em; text-transform:uppercase;
   color:var(--ink-faint); }
 .detail-row dd{ margin:0; display:flex; flex-direction:column; gap:2px; align-items:center; }
-.dd-strong{ font-size:clamp(15px,4.2vw,18px); color:var(--ink); font-weight:500; }
-.dd-sub{ font-size:12px; color:var(--ink-soft); letter-spacing:.02em; }
+.dd-strong{ font-size:clamp(16px,4.4vw,20px); color:var(--ink); font-weight:500; }
+.dd-sub{ font-size:12.5px; color:var(--ink-soft); letter-spacing:.02em; }
 
 .details-actions{ display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-top:clamp(18px,3vh,26px); }
 .btn{ display:inline-flex; align-items:center; gap:8px; text-decoration:none;
@@ -673,19 +683,6 @@ html[dir="rtl"] .quote-author{ letter-spacing:.04em; font-family:var(--hebrew); 
 .btn-ghost{ background:rgba(255,255,255,.4); color:var(--ink);
   border:1px solid var(--line-soft); }
 .btn-ghost:hover{ background:rgba(255,255,255,.7); }
-
-/* parents ON the card — bride's right, groom's left (RTL), slim divider between */
-.parents{ display:flex; align-items:stretch; justify-content:center; width:100%;
-  padding-top:clamp(7px,1.6vh,11px); border-top:1px solid rgba(150,120,70,.22); text-align:center; }
-.parent-col{ flex:1 1 0; min-width:0; display:flex; flex-direction:column; gap:3px;
-  padding:0 clamp(6px,2vw,12px); }
-.parent-label{ font-family:var(--hebrew); font-size:10px; letter-spacing:.14em;
-  text-transform:uppercase; color:var(--ink-faint); }
-.parent-names{ font-family:var(--hebrew); font-size:clamp(11px,3vw,12.5px);
-  line-height:1.4; color:var(--ink-soft); }
-.parent-div{ width:1px; align-self:stretch; background:rgba(150,120,70,.22); }
-html[dir="ltr"] .parent-label{ font-family:var(--serif); letter-spacing:.1em; }
-html[dir="ltr"] .parent-names{ font-family:var(--serif); }
 
 .footer{ text-align:center; padding:clamp(40px,8vh,70px) 20px clamp(28px,6vh,46px); }
 .f-mono{ font-size:30px; color:var(--ink); letter-spacing:.05em; }
