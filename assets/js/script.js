@@ -20,7 +20,7 @@ const CONFIG = {
   /* Calendar event */
   cal: {
     title: 'החתונה של עדן וגד · Eden & Gad Wedding',
-    location: 'אולמי אלכסנדר, המסיק 2, עמק חפר',   // verify exact venue/address
+    location: 'גן האירועים אלכסנדר, המסיק 2, עמק חפר',   // verify exact venue/address
     durationHours: 5,
   },
 
@@ -48,7 +48,7 @@ const I18N = {
     ntDay: 'Sunday',
     ntHdate: '12 Av 5786',
     ntSched: 'Reception 19:30 · Chuppah & Kiddushin 20:30',
-    ntVenue1: 'Alexander Halls',
+    ntVenue1: 'Alexander Events Garden',
     ntVenue2: 'HaMasik 2, Emek Hefer',
     ntClose1: 'We would love to see you and share with us',
     ntClose2: 'an evening of love, joy and blessing',
@@ -66,7 +66,7 @@ const I18N = {
     whenSub: '12 Av 5786',
     schedValue: 'Reception 19:30',
     schedSub: 'Chuppah & Kiddushin 20:30',
-    whereValue: 'Alexander Halls',
+    whereValue: 'Alexander Events Garden',
     whereSub: 'HaMasik 2, Emek Hefer',
     addCal: 'Add to calendar',
     rsvp: 'RSVP on WhatsApp',
@@ -95,7 +95,7 @@ const I18N = {
     ntDay: 'יום ראשון',
     ntHdate: 'י״ב באב תשפ״ו',
     ntSched: 'קבלת פנים 19:30 · חופה וקידושין 20:30',
-    ntVenue1: 'אולמי אלכסנדר',
+    ntVenue1: 'גן האירועים אלכסנדר',
     ntVenue2: 'המסיק 2, עמק חפר',
     ntClose1: 'נשמח לראותכם ולחלוק עמכם',
     ntClose2: 'ערב של אהבה, שמחה וברכה',
@@ -113,7 +113,7 @@ const I18N = {
     whenSub: 'י״ב באב התשפ״ו',
     schedValue: 'קבלת פנים 19:30',
     schedSub: 'חופה וקידושין 20:30',
-    whereValue: 'אולמי אלכסנדר',
+    whereValue: 'גן האירועים אלכסנדר',
     whereSub: 'המסיק 2, עמק חפר',
     addCal: 'הוספה ליומן',
     rsvp: 'אישור הגעה בוואטסאפ',
