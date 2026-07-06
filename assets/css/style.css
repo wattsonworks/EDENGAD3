@@ -422,7 +422,7 @@ html[dir="ltr"] .nt-venue{ font-size:3.2cqw; }
 .nt-par-col{ flex:1 1 0; min-width:0; display:flex; flex-direction:column; gap:0.5cqw;
   padding:0 2.2cqw; text-align:center; }
 .nt-par-label{ font-family:var(--hebrew); font-size:2.7cqw; color:#9a886a; letter-spacing:.03em; }
-.nt-par-names{ font-family:var(--hebrew); font-size:3cqw; color:#7d6c49; line-height:1.3; }
+.nt-par-names{ font-family:var(--hebrew); font-size:3cqw; color:#7d6c49; line-height:1.3; white-space:pre-line; }
 .nt-par-div{ width:1px; align-self:stretch; background:rgba(154,136,106,.5); margin:0.4cqw 0; }
 html[dir="ltr"] .nt-par-label{ font-family:var(--serif); }
 html[dir="ltr"] .nt-par-names{ font-family:var(--serif); font-style:italic; }
