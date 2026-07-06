@@ -150,7 +150,7 @@ const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').mat
   const prog  = new Array(ASSETS.length).fill(0);       // 0..1 downloaded, per asset
   const totalFrac = () => ASSETS.reduce((s, a, i) => s + prog[i] * a.w, 0) / TOTAL;
 
-  let settled = 0, finished = false, fontsReady = false, minElapsed = false;
+  let settled = 0, finished = false, fontsReady = false, minElapsed = false, audioReady = false;
 
   /* self-easing bar (setInterval, so it also ticks in non-painting/headless previews):
      eases toward real progress, and gently trickles toward 90% if the network stalls,
@@ -172,7 +172,7 @@ const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').mat
   }, 40);
 
   function maybeFinish() {
-    if (finished || settled < ASSETS.length || !fontsReady || !minElapsed) return;
+    if (finished || settled < ASSETS.length || !fontsReady || !minElapsed || !audioReady) return;
     finished = true;
     setTimeout(() => {
       pre.classList.add('done');
@@ -201,21 +201,36 @@ const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').mat
       // decode into a paint-ready bitmap so the scene doesn't flash in blank on reveal
       try { const img = new Image(); img.src = a.url; if (img.decode) await img.decode(); }
       catch (e) { await new Promise(r => { const im = new Image(); im.onload = im.onerror = r; im.src = a.url; }); }
-      if (a.url.indexOf('gate.webp') >= 0) { const g = $('#gate'); if (g) g.classList.add('ready'); }  // gate art is up
       prog[i] = 1; settled++; maybeFinish();
     })();
   });
 
+  /* mark the gate ready as soon as its art has LOADED (onload is reliable everywhere;
+     don't hang the tap prompt on img.decode(), which can stall) */
+  (() => {
+    const g = $('#gate'); if (!g) return;
+    const im = new Image();
+    im.onload = im.onerror = () => g.classList.add('ready');
+    im.src = 'assets/img/gate.webp';
+  })();
+
   /* also wait for webfonts (so the gate's type is right on first paint)… */
   (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve())
     .then(() => { fontsReady = true; maybeFinish(); });
+  /* …and buffer the music, so it plays the instant the gate is tapped (not a beat later) … */
+  (() => {
+    const bgm = $('#bgm');
+    if (!bgm) { audioReady = true; return; }
+    if (bgm.readyState >= 4) { audioReady = true; return; }               // already buffered
+    bgm.addEventListener('canplaythrough', () => { audioReady = true; maybeFinish(); }, { once: true });
+  })();
   /* …a short minimum so a cached load doesn't just flash… */
   setTimeout(() => { minElapsed = true; maybeFinish(); }, 600);
   /* …and a hard cap so it can never hang. */
   setTimeout(() => {
     if (finished) return;
     for (let i = 0; i < prog.length; i++) prog[i] = 1;
-    settled = ASSETS.length; fontsReady = true; minElapsed = true; maybeFinish();
+    settled = ASSETS.length; fontsReady = true; minElapsed = true; audioReady = true; maybeFinish();
   }, 7000);
 })();
 
